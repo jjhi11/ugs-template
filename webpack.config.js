@@ -8,8 +8,15 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const config = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js'
+  },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    compress: true,
+    port: 9000,
   },
   plugins: [
     new CleanWebpackPlugin(),
