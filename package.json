@@ -11,6 +11,10 @@
     "build-dev": "webpack --mode development",
     "build-prod": "webpack --mode production"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjhi11/ugs-template.git"
+  },
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^10.2.4",
