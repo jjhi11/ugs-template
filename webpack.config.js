@@ -12,24 +12,23 @@ const config = {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
     publicPath: '',
+    clean: true
   },
   devServer: {
-    static: {
-      directory: path.join(__dirname, 'public'),
-    },
+    watchFiles: ['src/index.html', 'src/style.css'],
+    // static: {
+    //   directory: path.join(__dirname, 'public'),
+    // },
     compress: true,
     port: 9000,
   },
   plugins: [
     new CleanWebpackPlugin(),
-    // new CopyPlugin({
-    //   patterns: [{ from: 'src/index.html' }],
-    // }),
     new HtmlWebpackPlugin({
-      // templateContent: ({ htmlWebpackPlugin }) => '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>' + htmlWebpackPlugin.options.title + '</title></head><body><div id=\"app\"></div></body></html>',
       title: 'ArcGIS API  for JavaScript',
       template: './src/index.html',
       filename: 'index.html',
+      chunksSortMode: 'none'
     }),
     new MiniCssExtractPlugin()
   ],
